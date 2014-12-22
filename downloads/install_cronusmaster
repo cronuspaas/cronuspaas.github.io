@@ -1,0 +1,38 @@
+
+# Check cronusmaster dependencies
+check_master_req () {
+  hash wget 2>/dev/null || fatal_error "Missing wget"
+  hash unzip 2>/dev/null || fatal_error "Missing unzip"
+  hash java 2>/dev/null || fatal_error "Missing java runtime" 
+}
+
+# Log and exit
+fatal_error () {
+  echo $1
+  exit -1
+}
+
+if [ ! -d "cronusmaster-master" ]; then
+  check_master_req
+  tmp_file=tmpfile
+  # cronus master source
+  echo "download cornusmaster content"
+  cm_pkg_repo="https://github.com/stackscaling/cronusmaster/archive/master.zip"
+  wget -O ${tmp_file} ${cm_pkg_repo}
+  unzip ${tmp_file}
+  rm ${tmp_file}
+  cd cronusmaster-master
+  # play binary
+  echo "download play runtime 1.2.7"
+  play_pkg_repo="http://downloads.typesafe.com/play/1.2.7/play-1.2.7.zip"
+  wget -O ${tmp_file} ${play_pkg_repo}
+  unzip ${tmp_file}
+  mv play-1.2.7 play_runtime
+  rm ${tmp_file}
+  cd ..
+fi
+
+echo "installing cronusmaster"
+cd cronusmaster-master
+scripts/install.sh
+
