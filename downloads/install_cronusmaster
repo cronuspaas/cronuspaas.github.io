@@ -17,7 +17,7 @@ if [ ! -d "cronusmaster-master" ]; then
   tmp_file=tmpfile
   # cronus master source
   echo "download cornusmaster content"
-  cm_pkg_repo="https://github.com/stackscaling/cronusmaster/archive/master.zip"
+  cm_pkg_repo="https://github.com/cronuspaas/cronusmaster/archive/master.zip"
   wget -O ${tmp_file} ${cm_pkg_repo}
   unzip ${tmp_file}
   rm ${tmp_file}

@@ -8,9 +8,9 @@
 
 usage() {
 	echo ""
-        echo "Usage: wget -qO- 'https://host/bootstrap_cronus' | DIR=<myapp_root> bash"
+        echo "Usage: wget -qO- 'http://cronuspaas.github.io/downloads/bootstrap_cronus' | DIR=<myapp_root> bash"
         echo "examples:"
-        echo " wget -qO- 'http://www.stackscaling.com/downloads/bootstrap_cronus' | DIR=. bash"
+        echo " wget -qO- 'http://cronuspaas.github.io/downloads/bootstrap_cronus' | DIR=. bash"
         echo ""
         exit -1;
 }
@@ -27,7 +27,7 @@ echo "create cronus folders"
 echo "create cronus structures"
 pushd $DIR
 echo "download from web"
-wget -qO - "https://github.com/stackscaling/cronusagent/raw/master/pkgs/cronus-bootstrap.tar.gz" | tar xzf -  
+wget -qO - "https://github.com/cronuspaas/cronusagent/raw/master/pkgs/cronus-bootstrap.tar.gz" | tar xzf -  
 popd
 
 echo "Finished"

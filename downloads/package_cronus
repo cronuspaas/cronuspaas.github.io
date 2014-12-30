@@ -42,7 +42,7 @@ checkplat() {
 
 usage() {
     echo ""
-    echo "Usage: curl -sS 'https://host/package_cronus' | DIR=app_root [appname=<appname>] [version=<version>] [platform=<platform>] [pkgsrc=<files_include_in_pkg>] bash"
+    echo "Usage: wget -qO- 'http://cronuspaas.github.io/downloads/package_cronus' | DIR=app_root [appname=<appname>] [version=<version>] [platform=<platform>] [pkgsrc=<files_include_in_pkg>] bash"
     echo ""
     echo "cronus pakcage naming convention: <appname>-<version>.<platform>.cronus"
     echo " appname: application name"
@@ -50,7 +50,7 @@ usage() {
     echo " platform: packaging platform. Default is 'ARCH_OS' of the system"
     echo ""
     echo "examples:"
-    echo " curl -sS 'http://www.stackscaling.com/downloads/package_cronus'  DIR=~/my_proj bash"
+    echo " wget -qO- 'http://cronuspaas.github.io/downloads/package_cronus'  DIR=~/my_proj bash"
     echo ""
     exit -1
 }

@@ -8,11 +8,11 @@ display_help() {
     echo "  MUST RUN AS ROOT!"
     echo "  Runtime dependency: python 2.6 and above, openssl 0.9.8 and above, upstart or systemd."
     echo "  Install dependency: Must run as root. Need wget."
-    echo "  wget -qO- 'http://www.stackscaling.com/downloads/install_agent' | sudo pkg_ver=<agent_ver> target_dir=<install_dir> server_pem=<httpcert.pem> agent_pwd=<api_password> dev=true bash"
+    echo "  wget -qO- 'http://cronuspaas.github.io/downloads/install_agent' | sudo pkg_ver=<agent_ver> target_dir=<install_dir> server_pem=<httpcert.pem> agent_pwd=<api_password> dev=true bash"
     echo 
     echo "  Examples:"
-    echo "    wget -qO- 'http://www.stackscaling.com/downloads/install_agent' | sudo dev=true bash"
-    echo "    wget -qO- 'http://www.stackscaling.com/downloads/install_agent' | sudo pkg_ver=0.1.6 target_dir=/var server_pem=./server.pem agent_pwd=password bash"
+    echo "    wget -qO- 'http://cronuspaas.github.io/downloads/install_agent' | sudo dev=true bash"
+    echo "    wget -qO- 'http://cronuspaas.github.io/downloads/install_agent' | sudo pkg_ver=0.1.45 target_dir=/var server_pem=./server.pem agent_pwd=password bash"
     echo ""
     exit -1
 }
