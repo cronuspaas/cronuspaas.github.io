@@ -60,6 +60,10 @@ checkos() {
         ;;
     esac
 
+    if [ -z "$OS" ] && [ -f /etc/os-release ]; then
+        OS=$(awk '/^ID=/' /etc/os-release | sed 's/ID=//' | tr '[:upper:]' '[:lower:]')
+    fi
+
     if [ -z "$OS" ]; then
         OS=$(lsb_release -i | awk '{print $3}' | tr '[:upper:]' '[:lower:]')
     fi
