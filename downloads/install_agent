@@ -289,7 +289,7 @@ elif hash systemctl 2>/dev/null; then
 	log_event "Setup systemd: add cronus.service"
 	log_event "Start cronus by systemd:"
 	cp -f $AGENT_ROOT/installed-packages/agent/${pkg_ver}.unix/cronus/systemd.service /usr/lib/systemd/system/cronus.service
-	ln -s /lib/systemd/system/cronus.service /etc/systemd/system/multi-user.target.wants/cronus.service
+	ln -s /usr/lib/systemd/system/cronus.service /etc/systemd/system/multi-user.target.wants/cronus.service
 	systemctl start cronus
 else
         log_event "Require upstart or systemd, none is installed. Aborting."
